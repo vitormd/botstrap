@@ -15,7 +15,7 @@ gem 'rails', '~> 5.0.2'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'factory_girl'
+  gem "factory_girl_rails", "~> 4.0"
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
 end
