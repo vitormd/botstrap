@@ -15,7 +15,6 @@ gem 'rails', '~> 5.0.2'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem "factory_girl_rails", "~> 4.0"
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
 end
@@ -25,6 +24,10 @@ group :development do
   gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
