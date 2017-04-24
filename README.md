@@ -13,25 +13,22 @@
 
 ## How it works?
 1. To create a new bot just go:
-  * ```bash
+  ```
   rails g [platform] [bot's name] [bot's token]
   ```
-  * **Example:**
-  ```bash
+  **Example:**
+  ```
   rails g telegram AwesomeBot ljk23n45234n23l4kn23l47d89a2d3aAuU
   ```
 
-***
-
-2. Then you should have endpoint available in the following path so the bot can receive your updates
-```
-POST [DOMAIN]/chat_bots/[platform]/[token]
-```
-
-**Example:**
-```
-POST mydomain.com/chat_bots/telegram/ljk23n45234n23l4kn23l47d89a2d3aAuU
-```
+2. Then you should have endpoint available in the following path so the bot can receive your updates:
+  ```
+  POST [DOMAIN]/chat_bots/[platform]/[token]
+  ```
+  **Example:**
+  ```
+  POST mydomain.com/chat_bots/telegram/ljk23n45234n23l4kn23l47d89a2d3aAuU
+  ```
 
 ## Contributing
 - [ ] Finish Telegram platform
