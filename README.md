@@ -21,6 +21,17 @@ Example:
 ```bash
 rails g telegram AwesomeBot ljk23n45234n23l4kn23l47d89a2d3aAuU
 ```
+
+Then you should have endpoint available in the following path so the bot can receive your updates
+```
+POST [DOMAIN]/chat_bots/[platform]/[token]
+```
+
+Example:
+```
+POST mydomain.com/chat_bots/telegram/ljk23n45234n23l4kn23l47d89a2d3aAuU
+```
+
 ## Contributing
 - [ ] Finish Telegram platform
 - [ ] Create generators
