@@ -60,6 +60,14 @@ end
 You can checkout a basic implementation of a Telegram FooBot [here](https://github.com/vitormd/robotos/blob/telegram/foo_bot/app/chat_bots/chat_bots/telegram/foo_bot.rb)
 
 ## Contributing
-- [ ] Finish Telegram platform
-- [ ] Create generators
-- [ ] Add Facebook Messenger Platform
+- Project
+  - [ ] Create generators
+- Telegram
+  - [ ] Create Telegram object's models for chat bots that demands persistence of chats, users and messages
+- Facebook Messenger
+  - [ ] Add `facebook_messenger` to platform enum in `models/chat_bot.rb`
+  - [ ] Create route and webhook method
+  - [ ] Create `facebbok_messenger_update` in `models/chat_bot.rb`
+  - [ ] Create chat_bot_base.rb in `app/chat_bots/chat_bots/facebook_messenger`
+  - [ ] Create a `FooBot` in a branch called `facebook-messenger/foo_bot` to serve as example
+  - [ ] Update this README documentation with this platform examples
