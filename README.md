@@ -21,3 +21,7 @@ Example:
 ```bash
 rails g telegram AwesomeBot ljk23n45234n23l4kn23l47d89a2d3aAuU
 ```
+## Contributing
+- [ ] Finish Telegram platform
+- [ ] Create generators
+- [ ] Add Facebook Messenger Platform
