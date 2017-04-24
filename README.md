@@ -1,5 +1,5 @@
 # Robotos
-**`Robotos`** is a rails API application bootstrap made to create chatbot backend structures for different platforms.
+**`Robotos`** is a rails API application bootstrap made to create chat bot's backend structures for different platforms with a webhook endpoint for updates.
 
 ## Which platforms are supported?
 - [x] Telegram
