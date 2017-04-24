@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post 'chat_bots/telegram/:id', to: 'chat_bots#telegram_webhook', as: 'telegram_webhook'
 end
