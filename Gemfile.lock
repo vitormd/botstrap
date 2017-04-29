@@ -197,7 +197,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   telegram-bot-ruby
-  tzinfo-data
 
 RUBY VERSION
    ruby 2.4.0p0
