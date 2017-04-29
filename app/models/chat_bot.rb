@@ -15,7 +15,7 @@ class ChatBot < ApplicationRecord
   private
 
   def telegram_update(update)
-    "ChatBots::Telegram::#{constantized_name}".constantize.new(token).update(update)
+    "Telegram::#{constantized_name}".constantize.new(token).update(update)
   end
 
   def constantized_name

@@ -36,21 +36,20 @@ POST mydomain.com/chat_bots/telegram/ljk23n45234n23l4kn23l47d89a2d3aAuU
 ```
 
 #### Your chat bot class
-- Each platform contain a `ChatBotBase` inside `app -> chat_bots -> chat_bots -> [platform]`
+- Each platform contain a `ChatBotBase` inside `app -> chat_bots -> [platform]`
 - Your class should be inside this platform folder and inheriting from its `ChatBotBase`
 - The `ChatBotBase` contains the initialize method that should be used for all of its platform chat bots since it automatically receives the token from the controller and gives you a `@api` variable as wrapper for the platform available methods
 
 **Example:**
-The code for the [ChatBots::Telegram::ChatBotBase](/app/chat_bots/chat_bots/telegram/chat_bot_base.rb)
+The code for the [Telegram::ChatBotBase](/app/chat_bots/telegram/chat_bot_base.rb)
 ```ruby
 require 'telegram/bot' # requires the platform wrapper
 
-module ChatBots
-  module Telegram
-    class ChatBotBase
-      def initialize(token)
-        @api = ::Telegram::Bot::Api.new(token) # gives access to api methods through @api
-      end
+
+module Telegram
+  class ChatBotBase
+    def initialize(token)
+      @api = ::Telegram::Bot::Api.new(token) # gives access to api methods through @api
     end
   end
 end
