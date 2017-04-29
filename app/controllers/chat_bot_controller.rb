@@ -1,6 +1,6 @@
 class ChatBotsController < ApplicationController
   def telegram_webhook
-    chat_bot(:telegram).update(params[:update])
+    chat_bot(:telegram).telegram_update(params[:update])
   end
 
   private

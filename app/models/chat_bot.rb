@@ -5,18 +5,11 @@ class ChatBot < ApplicationRecord
   validates :token, presence: true
   validates :platform, presence: true
 
-  def update(platform_update)
-    case platform
-    when :telegram
-      telegram_update(platform_update)
-    end
-  end
-
-  private
-
   def telegram_update(update)
     "Telegram::#{constantized_name}".constantize.new(token).update(update)
   end
+
+  private
 
   def constantized_name
     name.titleize.delete ' '
