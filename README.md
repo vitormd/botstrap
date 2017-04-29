@@ -61,9 +61,18 @@ You can checkout a basic implementation of a Telegram FooBot [here](https://gith
 
 ## Contributing
 - **Project**
-  - [ ] Create generators
+  - Create generators
+    - [ ] Create generators for telegram chatbot
+    - [ ] Create generators for telegram database
 - **Telegram**
-  - [ ] Create Telegram object's models for chat bots that demands persistence of chats, users and messages
+  - Create Telegram object's models for chat bots that demands persistence of chats, users and messages
+    - [x] Create User
+    - [x] Create Chat
+    - [x] Create Message
+    - [X] Create InlineQuery
+    - [X] Create Update
+    - [ ] Add support to image, video, location, etc fields
+    - [ ] Add other columns for other types of messages at telegram_messages
 - **Facebook Messenger**
   - [ ] Add `facebook_messenger` to platform enum in `models/chat_bot.rb`
   - [ ] Create route and webhook method

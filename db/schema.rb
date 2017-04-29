@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170429040534) do
+ActiveRecord::Schema.define(version: 20170429043800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 20170429040534) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "telegram_inline_queries", force: :cascade do |t|
+    t.string   "inline_query_id", null: false
+    t.integer  "from_id",         null: false
+    t.string   "query",           null: false
+    t.string   "offset",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["from_id"], name: "index_telegram_inline_queries_on_from_id", using: :btree
+    t.index ["inline_query_id"], name: "index_telegram_inline_queries_on_inline_query_id", using: :btree
+  end
+
   create_table "telegram_messages", force: :cascade do |t|
     t.integer  "message_id",              null: false
     t.integer  "date",                    null: false
@@ -50,6 +61,17 @@ ActiveRecord::Schema.define(version: 20170429040534) do
     t.index ["message_id"], name: "index_telegram_messages_on_message_id", using: :btree
   end
 
+  create_table "telegram_updates", force: :cascade do |t|
+    t.integer  "update_id",       null: false
+    t.integer  "message_id"
+    t.integer  "inline_query_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["inline_query_id"], name: "index_telegram_updates_on_inline_query_id", using: :btree
+    t.index ["message_id"], name: "index_telegram_updates_on_message_id", using: :btree
+    t.index ["update_id"], name: "index_telegram_updates_on_update_id", using: :btree
+  end
+
   create_table "telegram_users", force: :cascade do |t|
     t.string   "first_name", null: false
     t.string   "last_name"
@@ -58,6 +80,9 @@ ActiveRecord::Schema.define(version: 20170429040534) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "telegram_inline_queries", "telegram_users", column: "from_id"
   add_foreign_key "telegram_messages", "telegram_chats", column: "chat_id"
   add_foreign_key "telegram_messages", "telegram_users", column: "from_id"
+  add_foreign_key "telegram_updates", "telegram_inline_queries", column: "inline_query_id"
+  add_foreign_key "telegram_updates", "telegram_messages", column: "message_id"
 end
